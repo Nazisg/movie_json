@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+
+
+    <script>
+        let box = document.getElementById("box")
+        let loc = window.location.href
+        let key = loc.split("=")
+        console.log(key[1])
+
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=8ae45c300d682e96e1824fe6b1d094b8/${key[1]}`)
+        .then(res => {
+            // console.log(res)
+            if (res.ok == true && res.status === 200) {
+                return res.json()
+            } 
+        })
+        .then(res => {
+             console.log(res)
+           
+                box.innerHTML += `<div>
+                <a href="about.html?id=${res.id}"> 
+                    <img width="300px" height="400px" src="https://image.tmdb.org/t/p/w500/${res.poster_path}">
+                    <span>${res.title}</span>
+                    <br>
+                    <span>${res.category}</span>
+                    </a>
+                    </div>`
+          
+        })
+    </script>
+</body>
+
+
+</html>
+
+<!-- 
+https://api.themoviedb.org/3/movie/popular?api_key=8ae45c300d682e96e1824fe6b1d094b8 -->
+
+<!-- https://image.tmdb.org/t/p/w500/${index.poster_path} -->

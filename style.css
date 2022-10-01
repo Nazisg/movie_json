@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.box{
+    width: 300px;
+    height: auto;
+    background-color: rgba(100, 148, 237, 0.171);
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin: 5px;
+}
+#box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+
+}
+a{
+    color: rgb(187, 185, 185);
+}
+body{
+    background-color: darkslategrey;
+}
+.txt{
+    padding: 10px 0px;
+    color: rgba(255, 255, 255, 0.89)!important;
+   
+}
+.h1{
+    color: white;
+    padding-top: 50px;
+    padding-left: 90px;
+    font-size: 40px;
+}
